@@ -18,12 +18,12 @@ default:
 	exit(1);
 }
 
-$stabilities = [
-	"stable" => ["stable"],
-	"beta" => ["stable", "beta"],
-	"alpha" => ["stable", "beta", "alpha"],
-	"devel" => ["stable", "beta", "alpha", "devel"],
-];
+$stabilities = array(
+	"stable" => array("stable"),
+	"beta" => array("stable", "beta"),
+	"alpha" => array("stable", "beta", "alpha"),
+	"devel" => array("stable", "beta", "alpha", "devel"),
+);
 
 $cache = "$package.$version.$stability.cache";
 if (is_file($cache)) {
