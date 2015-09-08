@@ -99,7 +99,7 @@ addons:
    - libyaml-dev
    - libyaz4-dev
    - libzip-dev
-   - libzmq-dev
+   - libzmq3-dev
    - libzookeeper-st-dev
    - zlib1g-dev
 
