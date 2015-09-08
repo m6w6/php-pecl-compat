@@ -25,7 +25,6 @@ addons:
    - libbz2-dev
    - libc-ares-dev
    - libcairo2-dev
-   - libcouchbase-dev
    - libcurl4-openssl-dev
    - libdbus-glib-1-dev
    - libenchant-dev
@@ -53,7 +52,7 @@ addons:
    - liblapack-dev
    - libleveldb-dev
    - liblua5.1-0-dev
-   - liblz4-dev
+   - liblz-dev
    - libmagickcore-dev
    - libmagickwand-dev
    - libmcrypt-dev
@@ -80,7 +79,6 @@ addons:
    - libsasl2-dev
    - libselinux1-dev
    - libshp-dev
-   - libsodium-dev
    - libsphinxbase-dev
    - libspread1-dev
    - libsqlite3-dev
