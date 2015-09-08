@@ -6,7 +6,7 @@ sudo: false
 addons:
  apt:
   packages:
-   - php-cli
+   - php5-cli
    - php-pear
    - pkg-config
    - expect-dev
