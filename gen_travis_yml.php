@@ -26,4 +26,4 @@ foreach ($env as $e) {
 ?>
 
 script:
- -  make -f travis/pecl/Makefile pecl PECL='$$(./peclfu.php $(PHP_VERSION) $(EXT))'
+ -  make -f travis/pecl/Makefile travis/pecl//php-versions.json pecl PECL='$$(./peclfu.php $(PHP_VERSION) $(EXT))'
