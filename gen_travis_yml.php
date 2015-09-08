@@ -8,11 +8,157 @@ addons:
   packages:
    - php-cli
    - php-pear
+   - pkg-config
+   - expect-dev
+   - firebird-dev
+   - mongodb-dev
+   - perl-dev
+   - python-dev
+   - rrdtool
+   - swish-e-dev
+   - tk-dev
+   - uuid-dev
+   - libarchive-dev
+   - libattr1-dev
+   - libaugeas-dev
+   - libavahi-compat-libdnssd-dev
+   - libbz2-dev
+   - libc-ares-dev
+   - libcairo2-dev
+   - libcouchbase-dev
+   - libcurl4-openssl-dev
+   - libdbus-glib-1-dev
+   - libenchant-dev
+   - libev-dev
+   - libevent-dev
+   - libdrizzle-dev
+   - libffi-dev
+   - libfreeimage-dev
+   - libfreetype6-dev
+   - libfribidi-dev
+   - libfuse-dev
+   - libgearman-dev
+   - libgeoip-dev
+   - libgif-dev
+   - libgl1-mesa-dev
+   - libgpgme11-dev
+   - libgraphicsmagick1-dev
+   - libhiredis-dev
+   - libicu-dev
+   - libid3tag0-dev
+   - libidn11-dev
+   - libjpeg-dev
+   - libjudy-dev
+   - libkrb5-dev
+   - liblapack-dev
+   - libleveldb-dev
+   - liblua5.1-0-dev
+   - liblz4-dev
+   - libmagickcore-dev
+   - libmagickwand-dev
+   - libmcrypt-dev
+   - libmemcached-dev
+   - libmono-2.0-dev
+   - libmosquitto0-dev
+   - libmsgpack-dev
+   - libmysqlclient-dev
+   - libncurses5-dev
+   - libnewt-dev
+   - libneon27-dev
+   - libogg-dev
+   - libopenal-dev
+   - libpam0g-dev
+   - libpcsclite-dev
+   - libpcre3-dev
+   - libpng12-dev
+   - libpq-dev
+   - libprotobuf-dev
+   - librabbitmq-dev
+   - librrd-dev
+   - librsvg2-dev
+   - librsync-dev
+   - libsasl2-dev
+   - libselinux1-dev
+   - libshp-dev
+   - libsodium-dev
+   - libsphinxbase-dev
+   - libspread1-dev
+   - libsqlite3-dev
+   - libssh2-1-dev
+   - libssl-dev
+   - libstatgrab-dev
+   - libsvm-dev
+   - libsvn-dev
+   - libtcc-dev
+   - libtidy-dev
+   - libtokyotyrant-dev
+   - libv8-dev
+   - libvarnishapi-dev
+   - libvorbis-dev
+   - libwbxml2-dev
+   - libwrap0-dev
+   - libxml2-dev
+   - libyaml-dev
+   - libyaz4-dev
+   - libzip-dev
+   - libzmq-dev
+   - libzookeeper-st-dev
+   - zlib1g-dev
+
 
 env:
 <?php
 
-$pkg = simplexml_load_file("http://pecl.php.net/rest/p/packages.xml")->p;
+const PACKAGES = "http://pecl.php.net/rest/p/packages.xml";
+const RELEASES = "http://pecl.php.net/rest/r/%s/allreleases.xml";
+
+// pre-filter packages without any release
+$pkg = [];
+
+$client = new http\Client;
+$client->configure(["max_host_connextions" => 1]);
+$packages = $client->enqueue(
+	new http\Client\Request("GET", PACKAGES), 
+	function() {
+		return true;
+	})
+	->send()
+	->getResponse();
+
+function enqueue($client, $package, &$pkg) {
+	$rq = new http\Client\Request("HEAD", sprintf(RELEASES, strtolower($package)));
+	$cb = function($res) use(&$cb, &$pkg, $client, $rq, $package) {
+		$rc = $res->getResponseCode();
+		
+		if ($rc === 0) {
+			fprintf(STDERR, "*%s\n", $package);
+			$client->requeue($rq, $cb);
+			return false;
+		} elseif ($rc === 200) {
+			fprintf(STDERR, "+%s\n", $package);
+			$pkg[] = (string) $package;
+		} else {
+			fprintf(STDERR, "-%s\n", $package);
+		}
+		return true;
+	};
+	$client->enqueue($rq, $cb);
+}
+foreach (simplexml_load_string($packages->getBody())->p as $package) {
+	if (!strncasecmp($package, "win", 3)) {
+		// sort out most obvious windows-only packages
+		continue;
+	}
+	enqueue($client, $package, $pkg);
+}
+while ($client->count()) {
+	try {
+		$client->send();
+	} catch (Exception $e) {
+		fprintf(STDERR, "%s\n", $e->getMessage());
+	}
+}
+sort($pkg, SORT_NATURAL|SORT_FLAG_CASE);
 $gen = include "./travis/pecl/gen-matrix.php";
 $env = $gen([
 	"PHP" => ["5.4", "5.5", "5.6", "master"],
@@ -25,5 +171,10 @@ foreach ($env as $e) {
 }
 ?>
 
+before_script:
+ - make -f travis/pecl/Makefile travis/pecl//php-versions.json
+
 script:
- -  make -f travis/pecl/Makefile travis/pecl//php-versions.json pecl PECL='$$(./peclfu.php $(PHP_VERSION) $(EXT))'
+ - make -f travis/pecl/Makefile pecl PECL='$$(./peclfu.php $(PHP_VERSION) $(EXT))'
+
+
