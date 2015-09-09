@@ -67,7 +67,7 @@ foreach (@simplexml_load_file(sprintf(ALL_RELEASES, $package))->r as $r) {
 		continue;
 	}
 	foreach ($php->exclude as $ex) {
-		fprintf(STDERR, "Checking whether %s != %s\n");
+		fprintf(STDERR, "Checking whether %s != %s\n", $version, $ex);
 		if (version_compare($version, $ex, "==")) {
 			continue;
 		}
