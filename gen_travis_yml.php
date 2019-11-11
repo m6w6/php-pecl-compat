@@ -15,6 +15,7 @@ addons:
    - libicu-dev
    - libmemcached-dev
    - libmsgpack-dev
+   - libonig-dev
    - libpcre3-dev
    - libsqlite3-dev
    - libssl-dev
