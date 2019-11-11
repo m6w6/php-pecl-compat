@@ -30,12 +30,12 @@ $gen = include "./travis/pecl/gen-matrix.php";
 $env = $gen([
 	"PHP" => ["7.1", "7.3", "7.4", "master"],
 	"PECL" => [
-		"apcu", "apcu::master", 
+		"apcu", "apcu:apcu:master", 
 		"geoip", 
-		"mailparse", "mailparse::master", 
-		"memcached", "memcached::master", 
-		"msgpack", "msgpack::master",
-		"oauth", "oauth::master"
+		"mailparse", "mailparse:mailparse:master", 
+		"memcached", "memcached:memcached:master", 
+		"msgpack", "msgpack:msgpack:master",
+		"oauth", "oauth:oauth:master"
 	],
 	"enable_mbstring" => "yes",
 	"enable_session" => "yes",
