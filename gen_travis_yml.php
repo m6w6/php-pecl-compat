@@ -6,6 +6,7 @@ dist: bionic
 addons:
  apt:
   packages:
+   - geoip-database
    - php-cli
    - pkg-config
    - libc-ares-dev
