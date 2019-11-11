@@ -6,7 +6,7 @@ dist: bionic
 addons:
  apt:
   packages:
-   - php7-cli
+   - php-cli
    - pkg-config
    - libc-ares-dev
    - libcurl4-openssl-dev
