@@ -14,6 +14,7 @@ addons:
    - libicu-dev
    - libmemcached-dev
    - libmsgpack-dev
+   - libonig-dev
    - libpcre3-dev
    - libsqlite3-dev
    - libssl-dev
@@ -26,10 +27,10 @@ env:
  - PHP=7.3 PECL=apcu enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=apcu enable_mbstring=yes enable_session=yes
  - PHP=master PECL=apcu enable_mbstring=yes enable_session=yes
- - PHP=7.1 PECL=apcu::master enable_mbstring=yes enable_session=yes
- - PHP=7.3 PECL=apcu::master enable_mbstring=yes enable_session=yes
- - PHP=7.4 PECL=apcu::master enable_mbstring=yes enable_session=yes
- - PHP=master PECL=apcu::master enable_mbstring=yes enable_session=yes
+ - PHP=7.1 PECL=apcu:apcu:master enable_mbstring=yes enable_session=yes
+ - PHP=7.3 PECL=apcu:apcu:master enable_mbstring=yes enable_session=yes
+ - PHP=7.4 PECL=apcu:apcu:master enable_mbstring=yes enable_session=yes
+ - PHP=master PECL=apcu:apcu:master enable_mbstring=yes enable_session=yes
  - PHP=7.1 PECL=geoip enable_mbstring=yes enable_session=yes
  - PHP=7.3 PECL=geoip enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=geoip enable_mbstring=yes enable_session=yes
@@ -38,34 +39,34 @@ env:
  - PHP=7.3 PECL=mailparse enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=mailparse enable_mbstring=yes enable_session=yes
  - PHP=master PECL=mailparse enable_mbstring=yes enable_session=yes
- - PHP=7.1 PECL=mailparse::master enable_mbstring=yes enable_session=yes
- - PHP=7.3 PECL=mailparse::master enable_mbstring=yes enable_session=yes
- - PHP=7.4 PECL=mailparse::master enable_mbstring=yes enable_session=yes
- - PHP=master PECL=mailparse::master enable_mbstring=yes enable_session=yes
+ - PHP=7.1 PECL=mailparse:mailparse:master enable_mbstring=yes enable_session=yes
+ - PHP=7.3 PECL=mailparse:mailparse:master enable_mbstring=yes enable_session=yes
+ - PHP=7.4 PECL=mailparse:mailparse:master enable_mbstring=yes enable_session=yes
+ - PHP=master PECL=mailparse:mailparse:master enable_mbstring=yes enable_session=yes
  - PHP=7.1 PECL=memcached enable_mbstring=yes enable_session=yes
  - PHP=7.3 PECL=memcached enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=memcached enable_mbstring=yes enable_session=yes
  - PHP=master PECL=memcached enable_mbstring=yes enable_session=yes
- - PHP=7.1 PECL=memcached::master enable_mbstring=yes enable_session=yes
- - PHP=7.3 PECL=memcached::master enable_mbstring=yes enable_session=yes
- - PHP=7.4 PECL=memcached::master enable_mbstring=yes enable_session=yes
- - PHP=master PECL=memcached::master enable_mbstring=yes enable_session=yes
+ - PHP=7.1 PECL=memcached:memcached:master enable_mbstring=yes enable_session=yes
+ - PHP=7.3 PECL=memcached:memcached:master enable_mbstring=yes enable_session=yes
+ - PHP=7.4 PECL=memcached:memcached:master enable_mbstring=yes enable_session=yes
+ - PHP=master PECL=memcached:memcached:master enable_mbstring=yes enable_session=yes
  - PHP=7.1 PECL=msgpack enable_mbstring=yes enable_session=yes
  - PHP=7.3 PECL=msgpack enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=msgpack enable_mbstring=yes enable_session=yes
  - PHP=master PECL=msgpack enable_mbstring=yes enable_session=yes
- - PHP=7.1 PECL=msgpack::master enable_mbstring=yes enable_session=yes
- - PHP=7.3 PECL=msgpack::master enable_mbstring=yes enable_session=yes
- - PHP=7.4 PECL=msgpack::master enable_mbstring=yes enable_session=yes
- - PHP=master PECL=msgpack::master enable_mbstring=yes enable_session=yes
+ - PHP=7.1 PECL=msgpack:msgpack:master enable_mbstring=yes enable_session=yes
+ - PHP=7.3 PECL=msgpack:msgpack:master enable_mbstring=yes enable_session=yes
+ - PHP=7.4 PECL=msgpack:msgpack:master enable_mbstring=yes enable_session=yes
+ - PHP=master PECL=msgpack:msgpack:master enable_mbstring=yes enable_session=yes
  - PHP=7.1 PECL=oauth enable_mbstring=yes enable_session=yes
  - PHP=7.3 PECL=oauth enable_mbstring=yes enable_session=yes
  - PHP=7.4 PECL=oauth enable_mbstring=yes enable_session=yes
  - PHP=master PECL=oauth enable_mbstring=yes enable_session=yes
- - PHP=7.1 PECL=oauth::master enable_mbstring=yes enable_session=yes
- - PHP=7.3 PECL=oauth::master enable_mbstring=yes enable_session=yes
- - PHP=7.4 PECL=oauth::master enable_mbstring=yes enable_session=yes
- - PHP=master PECL=oauth::master enable_mbstring=yes enable_session=yes
+ - PHP=7.1 PECL=oauth:oauth:master enable_mbstring=yes enable_session=yes
+ - PHP=7.3 PECL=oauth:oauth:master enable_mbstring=yes enable_session=yes
+ - PHP=7.4 PECL=oauth:oauth:master enable_mbstring=yes enable_session=yes
+ - PHP=master PECL=oauth:oauth:master enable_mbstring=yes enable_session=yes
 
 before_script:
  - test ! $PECL = apcu::master		|| git clone https://github.com/krakjoe/apcu
