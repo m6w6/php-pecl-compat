@@ -23,6 +23,8 @@ addons:
    - libzip-dev
    - zlib1g-dev
 
+services:
+ - memcached
 
 env:
 <?php
