@@ -68,11 +68,11 @@ env:
  - PHP=master PECL=oauth::master enable_mbstring=yes enable_session=yes
 
 before_script:
- - test $PECL = apcu::master		&& git clone https://github.com/krakjoe/apcu
- - test $PECL = mailparse::master	&& git clone https://git.php.net/repository/pecl/mail/mailparse.git
- - test $PECL = memcached::master	&& git clone https://github.com/php-memcached-dev/php-memcached
- - test $PECL = msgpack::master		&& git clone https://github.com/msgpack/msgpack-php
- - test $PECL = oauth::master		&& git clone https://github.com/php/pecl-web_services-oauth
+ - test ! $PECL = apcu::master		|| git clone https://github.com/krakjoe/apcu
+ - test ! $PECL = mailparse::master	|| git clone https://git.php.net/repository/pecl/mail/mailparse.git
+ - test ! $PECL = memcached::master	|| git clone https://github.com/php-memcached-dev/php-memcached
+ - test ! $PECL = msgpack::master	|| git clone https://github.com/msgpack/msgpack-php
+ - test ! $PECL = oauth::master		|| git clone https://github.com/php/pecl-web_services-oauth
 
 script:
  - make -f travis/pecl/Makefile pecl
