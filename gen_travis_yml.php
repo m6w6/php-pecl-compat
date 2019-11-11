@@ -33,12 +33,12 @@ $gen = include "./travis/pecl/gen-matrix.php";
 $env = $gen([
 	"PHP" => ["7.1", "7.3", "7.4", "master"],
 	"PECL" => [
-		"apcu", "apcu:apcu:master", 
+		"apcu",			"krakjoe/apcu:apcu:master",
 		"geoip", 
-		"mailparse", "mailparse:mailparse:master", 
-		"memcached", "memcached:memcached:master", 
-		"msgpack", "msgpack:msgpack:master",
-		"oauth", "oauth:oauth:master"
+		"mailparse",	"php/pecl-mail-mailparse:mailparse:master",
+		"memcached",	"php-memcached-dev/php-memcached:memcached:master",
+		"msgpack",		"msgpack/msgpack-php:msgpack:master",
+		"oauth",		"php/pecl-web_services-oauth:oauth:master"
 	],
 	"enable_mbstring" => "yes",
 	"enable_session" => "yes",
@@ -48,13 +48,6 @@ foreach ($env as $grp) foreach ($grp as $e) {
 	printf(" - %s\n", $e);
 }
 ?>
-
-before_script:
- - test ! $PECL = apcu:apcu:master				|| git clone https://github.com/krakjoe/apcu pecl-apcu-master
- - test ! $PECL = mailparse:mailparse:master	|| git clone https://github.com/php/pecl-mail-mailparse pecl-mailparse-master
- - test ! $PECL = memcached:memcached:master	|| git clone https://github.com/php-memcached-dev/php-memcached pecl-memcached-master
- - test ! $PECL = msgpack:msgpack:master		|| git clone https://github.com/msgpack/msgpack-php pecl-msgpack-master
- - test ! $PECL = oauth:oauth:master			|| git clone https://github.com/php/pecl-web_services-oauth pecl-oauth-master
 
 script:
  - make -f travis/pecl/Makefile pecl
