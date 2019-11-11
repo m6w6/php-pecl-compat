@@ -47,11 +47,11 @@ foreach ($env as $grp) foreach ($grp as $e) {
 ?>
 
 before_script:
- - test ! $PECL = apcu:apcu:master				|| git clone https://github.com/krakjoe/apcu
- - test ! $PECL = mailparse:mailparse:master	|| git clone https://github.com/php/pecl-mail-mailparse mailparse
- - test ! $PECL = memcached:memcached:master	|| git clone https://github.com/php-memcached-dev/php-memcached memcached
- - test ! $PECL = msgpack:msgpack:master		|| git clone https://github.com/msgpack/msgpack-php msgpack
- - test ! $PECL = oauth:oauth:master			|| git clone https://github.com/php/pecl-web_services-oauth
+ - test ! $PECL = apcu:apcu:master				|| git clone https://github.com/krakjoe/apcu pecl-apcu-master
+ - test ! $PECL = mailparse:mailparse:master	|| git clone https://github.com/php/pecl-mail-mailparse pecl-mailparse-master
+ - test ! $PECL = memcached:memcached:master	|| git clone https://github.com/php-memcached-dev/php-memcached pecl-memcached-master
+ - test ! $PECL = msgpack:msgpack:master		|| git clone https://github.com/msgpack/msgpack-php pecl-msgpack-master
+ - test ! $PECL = oauth:oauth:master			|| git clone https://github.com/php/pecl-web_services-oauth pecl-oauth-master
 
 script:
  - make -f travis/pecl/Makefile pecl
