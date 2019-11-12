@@ -72,7 +72,7 @@ env:
  - PHP=master PECL=php/pecl-web_services-oauth:oauth:master enable_mbstring=yes enable_session=yes enable_pcntl=yes enable_json=yes with_curl=yes
 
 before_script:
- - ln -s /usr/include/{x86_64-linux-gnu/,}curl
+ - sudo ln -s /usr/include/{x86_64-linux-gnu/,}curl
  - make -f travis/pecl/Makefile php
 
 script:
