@@ -53,6 +53,7 @@ foreach ($env as $grp) foreach ($grp as $e) {
 ?>
 
 before_script:
+ - ln -s /usr/include/{x86_64-linux-gnu/,}curl
  - make -f travis/pecl/Makefile php
 
 script:
