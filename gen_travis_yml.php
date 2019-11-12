@@ -30,21 +30,31 @@ env:
 <?php
 
 $gen = include "./travis/pecl/gen-matrix.php";
+$php = ["7.1", "7.3", "7.4", "master"];
 $env = $gen([
-	"PHP" => ["7.1", "7.3", "7.4", "master"],
-	"PECL" => [
-		"apcu",			"krakjoe/apcu:apcu:master",
-		"geoip", 
-		"mailparse",	"php/pecl-mail-mailparse:mailparse:master",
-		"memcached",	"php-memcached-dev/php-memcached:memcached:master",
-		"msgpack",		"msgpack/msgpack-php:msgpack:master",
-		"oauth",		"php/pecl-web_services-oauth:oauth:master"
-	],
-	"enable_mbstring" => "yes",
-	"enable_session" => "yes",
+	"PHP" => $php,
+	"PECL" => ["apcu", "krakjoe/apcu:apcu:master"],
 	"enable_pcntl" => "yes",
+], [
+	"PHP" => $php,
+	"PECL" => "geoip",
+], [
+	"PHP" => $php,
+	"PECL" => ["mailparse", "php/pecl-mail-mailparse:mailparse:master"],
+	"enable_mbstring" => "yes",
+], [
+	"PHP" => $php,
+	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
 	"enable_json" => "yes",
+], [
+	"PHP" => $php,
+	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master"],
+	"enable_session" => "yes",
+], [
+	"PHP" => $php,
+	"PECL" => ["oauth", "php/pecl-web_services-oauth:oauth:master"],
 	"with_curl" => "yes",
+	"enable_pcntl" => "yes",
 ]);
 
 foreach ($env as $grp) foreach ($grp as $e) {
