@@ -52,6 +52,9 @@ foreach ($env as $grp) foreach ($grp as $e) {
 }
 ?>
 
+before_script:
+ - make -f travis/pecl/Makefile php
+
 script:
  - make -f travis/pecl/Makefile pecl
  - make -f travis/pecl/Makefile pecl-test
