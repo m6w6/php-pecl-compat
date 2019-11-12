@@ -42,6 +42,9 @@ $env = $gen([
 	],
 	"enable_mbstring" => "yes",
 	"enable_session" => "yes",
+	"enable_pcntl" => "yes",
+	"enable_json" => "yes",
+	"with_curl" => "yes",
 ]);
 
 foreach ($env as $grp) foreach ($grp as $e) {
