@@ -46,6 +46,7 @@ $env = $gen([
 	"PHP" => $php,
 	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
 	"enable_json" => "yes",
+	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
 	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master"],

@@ -46,14 +46,14 @@ env:
  - PHP=7.3 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes
  - PHP=7.4 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes
  - PHP=master PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes
- - PHP=7.1 PECL=memcached enable_json=yes
- - PHP=7.3 PECL=memcached enable_json=yes
- - PHP=7.4 PECL=memcached enable_json=yes
- - PHP=master PECL=memcached enable_json=yes
- - PHP=7.1 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes
- - PHP=7.3 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes
- - PHP=7.4 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes
- - PHP=master PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes
+ - PHP=7.1 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.3 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.4 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=master PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.1 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=7.3 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=7.4 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=master PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
  - PHP=7.1 PECL=msgpack enable_session=yes
  - PHP=7.3 PECL=msgpack enable_session=yes
  - PHP=7.4 PECL=msgpack enable_session=yes
