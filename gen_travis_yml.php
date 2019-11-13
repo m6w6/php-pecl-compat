@@ -35,6 +35,7 @@ $env = $gen([
 	"PHP" => $php,
 	"PECL" => ["apcu", "krakjoe/apcu:apcu:master"],
 	"enable_pcntl" => "yes",
+	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
 	"PECL" => "geoip",
@@ -45,6 +46,7 @@ $env = $gen([
 ], [
 	"PHP" => $php,
 	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
+	"TESTS" => "\"'$(PECL_DIR)/tests/*.phpt'\"",
 	"enable_json" => "yes",
 	"enable_session" => "yes",
 ], [
