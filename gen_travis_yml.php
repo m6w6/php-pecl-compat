@@ -63,6 +63,7 @@ $env = $gen([
 	"enable_pcntl" => "yes",
 	"enable_posix" => "yes",
 	"with_openssl" => "yes",
+	"enable_hash" => "yes",
 ]);
 
 foreach ($env as $grp) foreach ($grp as $e) {
