@@ -58,6 +58,8 @@ $env = $gen([
 	"PECL" => ["oauth", "php/pecl-web_services-oauth:oauth:master"],
 	"with_curl" => "yes",
 	"enable_pcntl" => "yes",
+	"enable_posix" => "yes",
+	"with_openssl" => "yes",
 ]);
 
 foreach ($env as $grp) foreach ($grp as $e) {
