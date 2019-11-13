@@ -43,6 +43,7 @@ $env = $gen([
 	"PHP" => $php,
 	"PECL" => ["mailparse", "php/pecl-mail-mailparse:mailparse:master"],
 	"enable_mbstring" => "yes",
+	"with_zlib" => "yes",
 ], [
 	"PHP" => $php,
 	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
