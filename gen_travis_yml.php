@@ -53,8 +53,8 @@ $env = $gen([
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
-	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master"],
-	"TESTS" => "\"'$(PECL_DIR)/tests/{[A-z],[0-9][0-35-9],04[^0]}*'\"",
+	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master", "m6w6/msgpack-php:msgpack:master"],
+	"TESTS" => "\"'$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*'\"",
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
