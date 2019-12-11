@@ -34,10 +34,10 @@ env:
  - PHP=7.3 PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
  - PHP=7.4 PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
  - PHP=master PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
- - PHP=7.1 PECL=geoip TESTS="\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt"
- - PHP=7.3 PECL=geoip TESTS="\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt"
- - PHP=7.4 PECL=geoip TESTS="\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt"
- - PHP=master PECL=geoip TESTS="\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt"
+ - PHP=7.1 PECL=geoip
+ - PHP=7.3 PECL=geoip
+ - PHP=7.4 PECL=geoip
+ - PHP=master PECL=geoip
  - PHP=7.1 PECL=mailparse enable_mbstring=yes with_zlib=yes
  - PHP=7.3 PECL=mailparse enable_mbstring=yes with_zlib=yes
  - PHP=7.4 PECL=mailparse enable_mbstring=yes with_zlib=yes
@@ -46,26 +46,26 @@ env:
  - PHP=7.3 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
  - PHP=7.4 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
  - PHP=master PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
- - PHP=7.1 PECL=memcached TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.3 PECL=memcached TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.4 PECL=memcached TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=master PECL=memcached TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.1 PECL=php-memcached-dev/php-memcached:memcached:master TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.3 PECL=php-memcached-dev/php-memcached:memcached:master TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.4 PECL=php-memcached-dev/php-memcached:memcached:master TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=master PECL=php-memcached-dev/php-memcached:memcached:master TESTS="\$(PECL_DIR)/tests/*.phpt" enable_json=yes enable_session=yes
- - PHP=7.1 PECL=msgpack TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.3 PECL=msgpack TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.4 PECL=msgpack TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=master PECL=msgpack TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.1 PECL=msgpack/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.3 PECL=msgpack/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.4 PECL=msgpack/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=master PECL=msgpack/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.1 PECL=m6w6/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.3 PECL=m6w6/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=7.4 PECL=m6w6/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
- - PHP=master PECL=m6w6/msgpack-php:msgpack:master TESTS="\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*" enable_session=yes
+ - PHP=7.1 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.3 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.4 PECL=memcached enable_json=yes enable_session=yes
+ - PHP=master PECL=memcached enable_json=yes enable_session=yes
+ - PHP=7.1 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=7.3 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=7.4 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=master PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
+ - PHP=7.1 PECL=msgpack enable_session=yes
+ - PHP=7.3 PECL=msgpack enable_session=yes
+ - PHP=7.4 PECL=msgpack enable_session=yes
+ - PHP=master PECL=msgpack enable_session=yes
+ - PHP=7.1 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
+ - PHP=7.3 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
+ - PHP=7.4 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
+ - PHP=master PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
+ - PHP=7.1 PECL=m6w6/msgpack-php:msgpack:master enable_session=yes
+ - PHP=7.3 PECL=m6w6/msgpack-php:msgpack:master enable_session=yes
+ - PHP=7.4 PECL=m6w6/msgpack-php:msgpack:master enable_session=yes
+ - PHP=master PECL=m6w6/msgpack-php:msgpack:master enable_session=yes
  - PHP=7.1 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
  - PHP=7.3 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
  - PHP=7.4 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
