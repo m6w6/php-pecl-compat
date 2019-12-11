@@ -39,7 +39,7 @@ $env = $gen([
 ], [
 	"PHP" => $php,
 	"PECL" => "geoip",
-	"TESTS" => "\\\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt",
+	"TESTS" => "\"\\\$(PECL_DIR)/tests/{0[^1]?,01[^9]}.phpt\"",
 ], [
 	"PHP" => $php,
 	"PECL" => ["mailparse", "php/pecl-mail-mailparse:mailparse:master"],
@@ -48,13 +48,13 @@ $env = $gen([
 ], [
 	"PHP" => $php,
 	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
-	"TESTS" => "\\\$(PECL_DIR)/tests/*.phpt",
+	"TESTS" => "\"\\\$(PECL_DIR)/tests/*.phpt\"",
 	"enable_json" => "yes",
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
 	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master", "m6w6/msgpack-php:msgpack:master"],
-	"TESTS" => "\\\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*",
+	"TESTS" => "\"\\\$(PECL_DIR)/tests/{[A-z1-9],0[0-35-9],04[^0]}*\"",
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
