@@ -30,7 +30,7 @@ env:
 <?php
 
 $gen = include "./travis/pecl/gen-matrix.php";
-$php = ["7.1", "7.3", "7.4", "master"];
+$php = ["7.3", "7.4", "8.0", "master"];
 $env = $gen([
 	"PHP" => $php,
 	"PECL" => ["apcu", "krakjoe/apcu:apcu:master"],
