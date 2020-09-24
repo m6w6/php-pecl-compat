@@ -32,30 +32,30 @@ env:
 $gen = include "./travis/pecl/gen-matrix.php";
 $php = ["7.3", "7.4", "8.0", "master"];
 $env = $gen([
-	"PHP" => $php,
 	"PECL" => ["apcu", "krakjoe/apcu:apcu:master"],
+	"PHP" => $php,
 	"enable_pcntl" => "yes",
 	"enable_session" => "yes",
 ], [
-	"PHP" => $php,
 	"PECL" => "geoip",
-], [
 	"PHP" => $php,
+], [
 	"PECL" => ["mailparse", "php/pecl-mail-mailparse:mailparse:master"],
+	"PHP" => $php,
 	"enable_mbstring" => "yes",
 	"with_zlib" => "yes",
 ], [
-	"PHP" => $php,
 	"PECL" => ["memcached", "php-memcached-dev/php-memcached:memcached:master"],
+	"PHP" => $php,
 	"enable_json" => "yes",
 	"enable_session" => "yes",
 ], [
-	"PHP" => $php,
 	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master"],
+	"PHP" => $php,
 	"enable_session" => "yes",
 ], [
-	"PHP" => $php,
 	"PECL" => ["oauth", "php/pecl-web_services-oauth:oauth:master"],
+	"PHP" => $php,
 	"with_curl" => "yes",
 	"enable_pcntl" => "yes",
 	"enable_posix" => "yes",

@@ -26,50 +26,50 @@ services:
  - memcached
 
 env:
- - PHP=7.3 PECL=apcu enable_pcntl=yes enable_session=yes
- - PHP=7.4 PECL=apcu enable_pcntl=yes enable_session=yes
- - PHP=8.0 PECL=apcu enable_pcntl=yes enable_session=yes
- - PHP=master PECL=apcu enable_pcntl=yes enable_session=yes
- - PHP=7.3 PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
- - PHP=7.4 PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
- - PHP=8.0 PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
- - PHP=master PECL=krakjoe/apcu:apcu:master enable_pcntl=yes enable_session=yes
- - PHP=7.3 PECL=geoip
- - PHP=7.4 PECL=geoip
- - PHP=8.0 PECL=geoip
- - PHP=master PECL=geoip
- - PHP=7.3 PECL=mailparse enable_mbstring=yes with_zlib=yes
- - PHP=7.4 PECL=mailparse enable_mbstring=yes with_zlib=yes
- - PHP=8.0 PECL=mailparse enable_mbstring=yes with_zlib=yes
- - PHP=master PECL=mailparse enable_mbstring=yes with_zlib=yes
- - PHP=7.3 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
- - PHP=7.4 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
- - PHP=8.0 PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
- - PHP=master PECL=php/pecl-mail-mailparse:mailparse:master enable_mbstring=yes with_zlib=yes
- - PHP=7.3 PECL=memcached enable_json=yes enable_session=yes
- - PHP=7.4 PECL=memcached enable_json=yes enable_session=yes
- - PHP=8.0 PECL=memcached enable_json=yes enable_session=yes
- - PHP=master PECL=memcached enable_json=yes enable_session=yes
- - PHP=7.3 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
- - PHP=7.4 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
- - PHP=8.0 PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
- - PHP=master PECL=php-memcached-dev/php-memcached:memcached:master enable_json=yes enable_session=yes
- - PHP=7.3 PECL=msgpack enable_session=yes
- - PHP=7.4 PECL=msgpack enable_session=yes
- - PHP=8.0 PECL=msgpack enable_session=yes
- - PHP=master PECL=msgpack enable_session=yes
- - PHP=7.3 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
- - PHP=7.4 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
- - PHP=8.0 PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
- - PHP=master PECL=msgpack/msgpack-php:msgpack:master enable_session=yes
- - PHP=7.3 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=7.4 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=8.0 PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=master PECL=oauth with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=7.3 PECL=php/pecl-web_services-oauth:oauth:master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=7.4 PECL=php/pecl-web_services-oauth:oauth:master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=8.0 PECL=php/pecl-web_services-oauth:oauth:master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
- - PHP=master PECL=php/pecl-web_services-oauth:oauth:master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=apcu PHP=7.3 enable_pcntl=yes enable_session=yes
+ - PECL=krakjoe/apcu:apcu:master PHP=7.3 enable_pcntl=yes enable_session=yes
+ - PECL=apcu PHP=7.4 enable_pcntl=yes enable_session=yes
+ - PECL=krakjoe/apcu:apcu:master PHP=7.4 enable_pcntl=yes enable_session=yes
+ - PECL=apcu PHP=8.0 enable_pcntl=yes enable_session=yes
+ - PECL=krakjoe/apcu:apcu:master PHP=8.0 enable_pcntl=yes enable_session=yes
+ - PECL=apcu PHP=master enable_pcntl=yes enable_session=yes
+ - PECL=krakjoe/apcu:apcu:master PHP=master enable_pcntl=yes enable_session=yes
+ - PECL=geoip PHP=7.3
+ - PECL=geoip PHP=7.4
+ - PECL=geoip PHP=8.0
+ - PECL=geoip PHP=master
+ - PECL=mailparse PHP=7.3 enable_mbstring=yes with_zlib=yes
+ - PECL=php/pecl-mail-mailparse:mailparse:master PHP=7.3 enable_mbstring=yes with_zlib=yes
+ - PECL=mailparse PHP=7.4 enable_mbstring=yes with_zlib=yes
+ - PECL=php/pecl-mail-mailparse:mailparse:master PHP=7.4 enable_mbstring=yes with_zlib=yes
+ - PECL=mailparse PHP=8.0 enable_mbstring=yes with_zlib=yes
+ - PECL=php/pecl-mail-mailparse:mailparse:master PHP=8.0 enable_mbstring=yes with_zlib=yes
+ - PECL=mailparse PHP=master enable_mbstring=yes with_zlib=yes
+ - PECL=php/pecl-mail-mailparse:mailparse:master PHP=master enable_mbstring=yes with_zlib=yes
+ - PECL=memcached PHP=7.3 enable_json=yes enable_session=yes
+ - PECL=php-memcached-dev/php-memcached:memcached:master PHP=7.3 enable_json=yes enable_session=yes
+ - PECL=memcached PHP=7.4 enable_json=yes enable_session=yes
+ - PECL=php-memcached-dev/php-memcached:memcached:master PHP=7.4 enable_json=yes enable_session=yes
+ - PECL=memcached PHP=8.0 enable_json=yes enable_session=yes
+ - PECL=php-memcached-dev/php-memcached:memcached:master PHP=8.0 enable_json=yes enable_session=yes
+ - PECL=memcached PHP=master enable_json=yes enable_session=yes
+ - PECL=php-memcached-dev/php-memcached:memcached:master PHP=master enable_json=yes enable_session=yes
+ - PECL=msgpack PHP=7.3 enable_session=yes
+ - PECL=msgpack/msgpack-php:msgpack:master PHP=7.3 enable_session=yes
+ - PECL=msgpack PHP=7.4 enable_session=yes
+ - PECL=msgpack/msgpack-php:msgpack:master PHP=7.4 enable_session=yes
+ - PECL=msgpack PHP=8.0 enable_session=yes
+ - PECL=msgpack/msgpack-php:msgpack:master PHP=8.0 enable_session=yes
+ - PECL=msgpack PHP=master enable_session=yes
+ - PECL=msgpack/msgpack-php:msgpack:master PHP=master enable_session=yes
+ - PECL=oauth PHP=7.3 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=php/pecl-web_services-oauth:oauth:master PHP=7.3 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=oauth PHP=7.4 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=php/pecl-web_services-oauth:oauth:master PHP=7.4 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=oauth PHP=8.0 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=php/pecl-web_services-oauth:oauth:master PHP=8.0 with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=oauth PHP=master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
+ - PECL=php/pecl-web_services-oauth:oauth:master PHP=master with_curl=yes enable_pcntl=yes enable_posix=yes with_openssl=yes enable_hash=yes
 
 before_script:
  - sudo ln -s /usr/include/{x86_64-linux-gnu/,}curl
