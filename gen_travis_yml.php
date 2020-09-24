@@ -51,7 +51,7 @@ $env = $gen([
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
-	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master", "m6w6/msgpack-php:msgpack:master"],
+	"PECL" => ["msgpack", "msgpack/msgpack-php:msgpack:master"],
 	"enable_session" => "yes",
 ], [
 	"PHP" => $php,
